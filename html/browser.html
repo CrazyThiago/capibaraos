@@ -1,0 +1,35 @@
+      <div class="window" id="app-browser">
+        <div class="window-header">
+          <div class="window-title"><i class="fa-solid fa-globe" style="color:#67e8f9;"></i> CapiBrowser</div>
+          <div class="window-controls">
+            <button class="win-btn win-min" onclick="minimizeApp('browser')" title="Minimizar"><svg viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="4" x2="7" y2="4"/></svg></button>
+            <button class="win-btn win-max" onclick="toggleFullscreen('browser')" title="Maximizar"><svg viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.5" y="1.5" width="5" height="5" rx="1"/></svg></button>
+            <button class="win-btn win-close" onclick="closeApp('browser')" title="Cerrar"><svg viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="1.5" y1="1.5" x2="6.5" y2="6.5"/><line x1="6.5" y1="1.5" x2="1.5" y2="6.5"/></svg></button>
+          </div>
+        </div>
+        <div class="window-body">
+          <div class="br-bar">
+            <button onclick="brBack()" title="Atrás"><i class="fa-solid fa-arrow-left"></i></button>
+            <button onclick="brForward()" title="Adelante"><i class="fa-solid fa-arrow-right"></i></button>
+            <button onclick="brReload()" title="Recargar"><i class="fa-solid fa-rotate-right"></i></button>
+            <button onclick="brHome()" title="Inicio"><i class="fa-solid fa-house"></i></button>
+            <input id="br-url" placeholder="Busca o escribe una URL" onkeydown="if(event.key==='Enter')brGo()">
+            <div id="br-status" class="br-status" title="Scramjet proxy"><i class="fa-solid fa-shield-halved"></i><span>Proxy</span></div>
+            <button class="br-go" onclick="brGo()" title="Ir"><i class="fa-solid fa-paper-plane"></i></button>
+            <button onclick="brOpenExternal()" title="Abrir en pestaña"><i class="fa-solid fa-up-right-from-square"></i></button>
+          </div>
+          <div class="br-stage">
+            <iframe id="br-frame" class="br-frame" srcdoc="<div style='font-family:sans-serif;padding:40px;text-align:center;color:#666;'><h2>🌐 CapiBrowser</h2><p>Escribe una URL para navegar</p></div>"></iframe>
+            <div id="br-overlay" class="br-overlay">
+              <div class="br-card">
+                <h2 id="br-overlay-title">CapiBrowser</h2>
+                <p id="br-overlay-text">Listo para navegar.</p>
+                <div class="br-actions">
+                  <button onclick="brGo()">Reintentar</button>
+                  <button class="secondary" onclick="brOpenExternal()">Abrir fuera</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
